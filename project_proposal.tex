@@ -9,7 +9,7 @@
 %\newcommand{\apsname}{Final Report}
 
 %######## APS360: Put your Group Number here
-\newcommand{\gpnumber}{7}
+\newcommand{\gpnumber}{28}
 
 \usepackage{hyperref}
 \usepackage{url}
@@ -21,17 +21,17 @@ based on ICLR Conference Format}
 
 
 %######## APS360: Put your names, student IDs and Emails here
-\author{Author One  \\
-Student\# 1005678901\\
-\texttt{author1@mail.utoronto.ca} \\
+\author{Salwa Waseem  \\
+Student\# 10090214161\\
+\texttt{salwa.waseem@mail.utoronto.ca} \\
 \And
-Author Two  \\
-Student\# 1005678901 \\
-\texttt{author2@mail.utoronto.ca} \\
+Maya Ramaneetharan Ramanathan  \\
+Student\# 1008717596 \\
+\texttt{maya.ramanathan@mail.utoronto.ca} \\
 \AND
-Author Three  \\
-Student\# 1005678901 \\
-\texttt{author3@mail.utoronto.ca} \\
+Maryah Noorani  \\
+Student\# 1008343188 \\
+\texttt{maryah.noorani@mail.utoronto.ca} \\
 \And
 Author Four \\
 Student\# 1005678901 \\
@@ -65,122 +65,63 @@ This template should be used for all your project related reports in APS360 cour
 
 
 
-\section{Project Document Submission for APS360 Course}
+\section{Introduction }
 
+Traffic Sign Recognition (TSR) is a crucial asset in driver-assistance systems. They are utilised to improve road safety by automating detection of traffic signs. This is essential to ensure vehicles are responsive to speed warnings, road conditions and are ultimately adaptable to dynamic driving environments. This technology aims to improve safety in vehicles to reduce human error and eventually mitigate road accidents. However, there are several challenges due to assorted lighting conditions, weather, and overall accuracy of interpretation. 
 
-The format for the submissions is a variant of the ICLR 2022 format.
-Please read carefully the instructions below, and follow them
-faithfully. There is a \textbf{9 page} limit for the main text. References do not have any limitation. This is also ICLR's standard length for a paper submission. 
-If your main text goes to page 10, a $-20\%$ penalty would be applied. If your main text goes to page 11, you will not receive any grade for your submission. 
+This project intends to generalize TSR across complex driving conditions while retaining recognition accuracy and computational efficiency. To achieve this, TSR models utilize deep learning models and algorithms to enhance classification performance. Deep learning is leveraged in this study as it is highly adaptable feature learning and is incredibly adept at scaling to large datasets. Ultimately, this deep learning model can be trained to effectively and accurately identify traffic signs, thus creating a safer driving environment. 
 
-\subsection{Style}
-
-Papers to be submitted to APS360 must be prepared according to the
-instructions presented here.
-
-Authors are required to use the APS360 \LaTeX{} style files obtainable at the
-APS360 website on Quercus. Tweaking the style is not permitted.
-
-\subsection{Retrieval of style files}
-
-The file \verb+APS360_Project.pdf+ contains these
-instructions and illustrates the various formatting requirements your APS360 paper must satisfy.
-Submissions must be made using \LaTeX{} and the style files
-\verb+iclr2022_conference.sty+ and \verb+iclr2022_conference.bst+ (to be used with \LaTeX{}2e). The file
-\verb+APS360_Project.tex+ may be used as a ``shell'' for writing your paper. All you have to do is replace the author, title, abstract, and text of the paper with
-your own.
-
-The formatting instructions contained in these style files are summarized in
-sections \ref{gen_inst}, \ref{headings}, and \ref{others} below.
-
-\section{General formatting instructions}
+\section{Illustration}
 \label{gen_inst}
 
-The text must be confined within a rectangle 5.5~inches (33~picas) wide and
-9~inches (54~picas) long. The left margin is 1.5~inch (9~picas).
-Use 10~point type with a vertical spacing of 11~points. Times New Roman is the
-preferred typeface throughout. Paragraphs are separated by 1/2~line space,
-with no indentation.
-
-Paper title is 17~point, in small caps and left-aligned.
-All pages should start at 1~inch (6~picas) from the top of the page.
-
-Authors' names are
-set in boldface, and each name is placed above its corresponding
-address. The lead author's name is to be listed first, and
-the co-authors' names are set to follow. Authors sharing the
-same address can be on the same line.
-
-Please pay special attention to the instructions in section \ref{others}
-regarding figures, tables, acknowledgments, and references.
-
-
-There will be a strict upper limit of 9 pages for the main text of the initial submission, with unlimited additional pages for citations. 
-
-\section{Headings: first level}
+\section{Background and Related Work}
 \label{headings}
+In a study conducted in 2018 by Madani and Yusof, a TSR model was created utilizing Support Vector Machines (SVM). This method highlights the colour, shape and pictogram on the traffic sign and ultimately efficiently identifies traffic signs with a recognition rate of 98.23\%. 
 
-First level headings are in small caps,
-flush left and in point size 12. One line space before the first level
-heading and 1/2~line space after the first level heading.
+Similarly, Soni et al. (2019) combined Histograms of Oriented Gradients (HOG), Local Binary Patterns (LBP), Principal Traffic Component Analysis (PCA) and SVM for traffic sign classification in their model. This model used PCA to reduce the dimensionality to overall improve the computational efficiency of the model, hence gaining an accuracy level of 84.44\%. 
 
-\subsection{Headings: second level}
+Namyang and Phimoltares (2020) applied a combination of HOG, SVM and Colour Layout Descriptors (CLD) to classify traffic signs. This method specifically resizes the images of traffic signs to 120x80 pixels then employs an SVM with a Radial Basis Function (RBF) kernel to improve classification accuracy, thus gaining an accuracy level of 93.98\%. 
 
-Second level headings are in small caps,
-flush left and in point size 10. One line space before the second level
-heading and 1/2~line space after the second level heading.
+Kerim and Efe (2021) employed 9 different Artificial Neural Networks (ANNs) to analyze traffic signs using specific attributes of the image. HOG and LBP were applied to extract specific features to achieve an accuracy of 95\%. This model significantly outperforms models that rely exclusively on HOG. 
 
-\subsubsection{Headings: third level}
+Lastly, Li et al. (2022) utilised the German Traffic Sign Recognition Benchmark (GTSRD) to exhibit the gravity of detail granularity and dimensionality reduction. This approach utilises an improved colour-histogram with HOG and reduced the dimensionality using PCA which yielded a near perfect score of 99.99\%. This model highlights the power of using colour information and dimensionality reduction to improve classification outcomes. 
 
-Third level headings are in small caps,
-flush left and in point size 10. One line space before the third level
-heading and 1/2~line space after the third level heading.
+\section{Data Processing}
+\subsection{Data Sources}
+\subsubsection*{GTSRD}
+As used in the study conducted by Li et al. (2022), this dataset is commonly utilized for traffic sign recognition tasks as it contains a variety of traffic sign images from different categories.
 
-\section{Citations, figures, tables, references}
-\label{others}
+\subsection*{Data Collected from Toronto}
+To increase the diversity of data and sample size, we will be collecting various photographs of traffic signs in downtown Toronto.
 
-These instructions apply to everyone, regardless of the formatter being used.
+\subsubsection*{Data Collection Process}
+\begin{itemize}
+    \item Compile a list of common and universal traffic signs, ensuring overlap between GTSRD and signs in Toronto.
+    \item Collect at least 200 images of diverse traffic signs from various angles, distances, and under different lighting conditions to improve model generalization.
+\end{itemize}
 
-\subsection{Citations within the text}
+\section*{Data Cleaning and Standardization}
+To ensure good data quality, the dataset will be cleaned by removing duplicates and low-quality samples that could negatively affect the model’s performance. The images will then be standardized to a common dimension (e.g., 32x32 pixels) and a consistent image format (e.g., JPEG) for more efficient processing in the model’s architecture.
 
-Citations within the text should be based on the \texttt{natbib} package
-and include the authors' last names and year (with the ``et~al.'' construct
-for more than two authors). When the authors or the publication are
-included in the sentence, the citation should not be in parenthesis using \verb|\citet{}| (as
-in ``See \citet{Hinton06} for more information.''). Otherwise, the citation
-should be in parenthesis using \verb|\citep{}| (as in ``Deep learning shows promise to make progress
-towards AI~\citep{Bengio+chapter2007}.'').
+\section*{Data Augmentation}
+To enhance the model's ability to generalize, data augmentation techniques will be implemented. This will be done by applying various transformations, including:
+\begin{itemize}
+    \item Rotations
+    \item Changes in color and brightness
+    \item Distance variation
+\end{itemize}
+Each image will be normalized by scaling the pixel values to a range of [0,1] to promote faster convergence during the training process.
 
-The corresponding references are to be listed in alphabetical order of
-authors, in the \textsc{References} section. As to the format of the
-references themselves, any style is acceptable as long as it is used
-consistently.
+\section*{Data Splitting}
+After cleaning and augmenting the dataset, we will randomize it and split it into three distinct sets:
+\begin{itemize}
+    \item \textbf{Training set (70\%)}: Used to train the model.
+    \item \textbf{Validation set (15\%)}: Used for tuning parameters and evaluating performance during training.
+    \item \textbf{Test set (15\%)}: Reserved for final evaluation after training.
+\end{itemize}
 
-To cite a new paper, first, you need to add that paper's BibTeX information to \verb+APS360_ref.bib+ file and then you can use the \verb|\citep{}| command to cite that in your main document. 
+This approach will ensure that our traffic sign recognition model is well-prepared for successful performance in real-world scenarios.
 
-\subsection{Footnotes}
-
-Indicate footnotes with a number\footnote{Sample of the first footnote} in the
-text. Place the footnotes at the bottom of the page on which they appear.
-Precede the footnote with a horizontal rule of 2~inches
-(12~picas).\footnote{Sample of the second footnote}
-
-\subsection{Figures}
-
-All artwork must be neat, clean, and legible. Lines should be dark
-enough for purposes of reproduction; art work should not be
-hand-drawn. The figure number and caption always appear after the
-figure. Place one line space before the figure caption, and one line
-space after the figure. The figure caption is lower case (except for
-first word and proper nouns); figures are numbered consecutively.
-
-Make sure the figure caption does not get separated from the figure.
-Leave sufficient space to avoid splitting the figure and figure caption.
-
-You may use color figures.
-However, it is best for the
-figure captions and the paper body to make sense if the paper is printed
-either in black/white or in color.
 
 \begin{figure}[h]
 \begin{center}
@@ -189,155 +130,108 @@ either in black/white or in color.
 \caption{Sample figure caption. Image: ZDNet}
 \end{figure}
 
-\subsection{Tables}
+\section{Architecture}
+The core architecture for this project will be based on Convolutional Neural Networks (CNN) due to its superior ability to identify and classify images. 
 
-All tables must be centered, neat, clean and legible. Do not use hand-drawn
-tables. The table number and title always appear before the table. See
-Table~\ref{sample-table}.
+The main architecture begins with an input layer that resizes the traffic sign images given to the model to 64x64 pixels with 3 color channels (RGB). These input images are then normalized before being fed into the network where they are passed through several convolutional layers that utilize the ReLU activation function. The main purpose of these convolutional layers is to project the images onto different dimensions to find common correlations. 
 
-Place one line space before the table title, one line space after the table
-title, and one line space after the table. The table title must be lower case
-(except for first word and proper nouns); tables are numbered consecutively.
+In between these convolutional layers, our model will also utilize multiple max pooling layers to identify the most important features of the projected images and discard the rest, saving CPU space and time. This neural network will also include dropout layers to reduce overfitting and maximize accuracy. The processed data is then sent to a flattening layer that remaps the data from a higher to a lower dimension. 
 
-\begin{table}[t]
-\caption{Sample table title}
-\label{sample-table}
-\begin{center}
-\begin{tabular}{ll}
-\multicolumn{1}{c}{\bf PART}  &\multicolumn{1}{c}{\bf DESCRIPTION}
-\\ \hline \\
-Dendrite         &Input terminal \\
-Axon             &Output terminal \\
-Soma             &Cell body (contains cell nucleus) \\
-\end{tabular}
-\end{center}
+The images are then sent to a fully connected layer that performs high-level reasoning and decision making. Finally, the data goes through an output layer where the softmax activation function is used and a separate set of weights and biases are applied to reach the final output data.
+
+
+\section{Baseline Model}
+The baseline model that will be employed for this is a machine learning algorithm specifically utilized for complex classifications called Support Vector Machines (SVM). SVM is applicable to both non-linear and linear datasets. This method identifies the optimal boundary called a hyperplane which separates datasets into various classes. The aim of this algorithm is to maximize the distance between two data points close to one another, referred to as support vectors, to define the optimal boundary. Furthermore, SVM can be combined with other enhancing techniques such as Histogram of Oriented Gradients (HOG) to achieve a higher accuracy. 
+
+\section{Ethical Considerations}
+\subsection*{Bias}
+\begin{itemize}
+    \item Geographical and cultural bias: Traffic signs vary across different regions, countries and continents. Thus, it is important to choose a particular region to base the model on, and feed data exclusive to that region to increase the accuracy of the model and avoid confusion.
+    \item Socioeconomic bias: The training data must contain a mix of signs from both higher and lower income areas to eliminate bias and ensure that the model can identify different signs regardless of socioeconomic status.
+\end{itemize}
+\subsection*{Privacy Concerns}
+\begin{itemize}
+    \item Data collection: Collection of data must be done carefully to ensure that no faces or license plates are accidentally captured and used. This is done to ensure that there is no breach in privacy.
+\end{itemize}
+
+\subsection*{Accuracy and Safety}
+\begin{itemize}
+    \item Testing in diverse environments: The testing data must include various different urban and rural environments to ensure that the model has seen and is able to classify signs with satisfactory accuracy regardless of the surrounding environments.
+\end{itemize}
+
+\section{Project Plan}
+
+\begin{table}
+    \centering
+    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1.5cm}|} \hline 
+         Task&  Mem 1&  Mem 2&  Mem 3&  Mem 4& Deadline\\ \hline 
+         \multicolumn{6}{|c|}{Phase 1: Project Setup \& Data Collection}\\ \hline 
+         &  &  &  &  & Oct 13\\ \hline 
+         Toronto Data Collection&  Collect 50 photos of various traffic signs&  Collect 50 photos of various traffic signs&  Collect 50 photos of various traffic signs&  Collect 50 photos of various traffic signs& Oct 13\\ \hline 
+         \multicolumn{6}{|c|}{Phase 2: Baseline Model \& Initial Training}\\ \hline 
+         &  &  &  &  & Oct 20\\ \hline 
+         &  &  &  &  & Oct 25\\ \hline 
+         \multicolumn{6}{|c|}{Phase 3: Model Optimization \& Hyperparameter Tuning}\\ \hline 
+         &  &  &  &  & Nov 10\\ \hline 
+ & & & & &Nov 13\\ \hline 
+ & & & & &Nov 15\\ \hline 
+ \multicolumn{6}{|c|}{Phase 4: Evaluation \& Testing}\\ \hline 
+ & & & & &Nov 19\\ \hline 
+ \multicolumn{6}{|c|}{Phase 5: Documentation \& Presentation}\\ \hline 
+         &  &  &  &  & Nov 23\\ \hline
+    \end{tabular}
+    
+    \caption{Caption}
+    \label{tab:my_label}
 \end{table}
 
-\section{Default Notation}
+Our team will collaborate by holding regular meetings every Thursday at 2PM, where we will review progress, discuss challenges, and plan upcoming tasks. To ensure consistent communication, we will utilize a dedicated group chat for daily updates, quick decisions, and clarifications. For seamless code collaboration, we will maintain a shared GitHub repository where all members can contribute. To avoid code overwriting, we will follow version control best practices, including using branches for individual tasks, submitting pull requests for review, and updating the team on active work to ensure synchronization.
 
-In an attempt to encourage standardized notation, we have included the
-notation file from the textbook, \textit{Deep Learning}
-\cite{goodfellow2016deep} available at
-\url{https://github.com/goodfeli/dlbook_notation/}.  Use of this style
-is not required and can be disabled by commenting out
-\texttt{math\_commands.tex}.
+\section{Risk Register}
+\subsection{Data Overfitting}
+Overfitting occurs in machine learning when a model accounts for the noise and outliers of its training data to an extent which negatively affects its performance on new data. This commonly occurs when there is an insufficient amount of data diversity. 
 
+Likelihood: Medium
 
-\centerline{\bf Numbers and Arrays}
-\bgroup
-\def\arraystretch{1.5}
-\begin{tabular}{p{1in}p{3.25in}}
-$\displaystyle a$ & A scalar (integer or real)\\
-$\displaystyle \va$ & A vector\\
-$\displaystyle \mA$ & A matrix\\
-$\displaystyle \tA$ & A tensor\\
-$\displaystyle \mI_n$ & Identity matrix with $n$ rows and $n$ columns\\
-$\displaystyle \mI$ & Identity matrix with dimensionality implied by context\\
-$\displaystyle \ve^{(i)}$ & Standard basis vector $[0,\dots,0,1,0,\dots,0]$ with a 1 at position $i$\\
-$\displaystyle \text{diag}(\va)$ & A square, diagonal matrix with diagonal entries given by $\va$\\
-$\displaystyle \ra$ & A scalar random variable\\
-$\displaystyle \rva$ & A vector-valued random variable\\
-$\displaystyle \rmA$ & A matrix-valued random variable\\
-\end{tabular}
-\egroup
-\vspace{0.25cm}
-\centerline{\bf Sets and Graphs}
-\bgroup
-\def\arraystretch{1.5}
+\subsubsection{Resolution:}
+\begin{itemize}
+    \item Utilize data augmentation in order to vary image color, rotation, or scale to artificially expand the data set 
+    \item Track validation loss so we can catch overfitting early on in order to adjust the training accordingly 
+\end{itemize}
+\subsection{Limited Data Diversity}
+While the model will be tested with a selected dataset that is comprehensive, it is possible that it will not account for all possible variations of traffic signs encountered in real-world situations. This may result in the model failing to effectively generalize the data.  
+\subsubsection{Resolution:}
+\begin{itemize}
+    \item Use multiple datasets from different regions or create our own dataset
+    \item Evaluate the model on real-life traffic signs collected from personal photos
+    \item Attempt to use datasets with diverse conditions such as varying weather conditions, lighting, angles, etc.
+\end{itemize}
 
-\begin{tabular}{p{1.25in}p{3.25in}}
-$\displaystyle \sA$ & A set\\
-$\displaystyle \R$ & The set of real numbers \\
-$\displaystyle \{0, 1\}$ & The set containing 0 and 1 \\
-$\displaystyle \{0, 1, \dots, n \}$ & The set of all integers between $0$ and $n$\\
-$\displaystyle [a, b]$ & The real interval including $a$ and $b$\\
-$\displaystyle (a, b]$ & The real interval excluding $a$ but including $b$\\
-$\displaystyle \sA \backslash \sB$ & Set subtraction, i.e., the set containing the elements of $\sA$ that are not in $\sB$\\
-$\displaystyle \gG$ & A graph\\
-$\displaystyle \parents_\gG(\ervx_i)$ & The parents of $\ervx_i$ in $\gG$
-\end{tabular}
-\vspace{0.25cm}
+\subsection{Model Training Duration}
+The training for a model can be a time-consuming process when the architecture is complex or if the training data is large. This may result in project delays. 
 
+Likelihood: Medium
+\subsubsection{Resolution}
+\begin{itemize}
+    \item Attempt to optimize system by modifying hyperparameters, simplifying model complexity, or use more efficient algorithms in order to speed up the training process
+    \item Set a time limit for training runs and monitor validation performance to stop training when performance plateaus to avoid unnecessary system cost
+    \item Add checkpoints to save intermediate models in case of losing progress due to long runs or run fails
+\end{itemize}
 
-\centerline{\bf Indexing}
-\bgroup
-\def\arraystretch{1.5}
+\subsection{Team Member Dropout}
+The possibility of a team member dropping the course will result in disruptions in the project process and workload distribution.
 
-\begin{tabular}{p{1.25in}p{3.25in}}
-$\displaystyle \eva_i$ & Element $i$ of vector $\va$, with indexing starting at 1 \\
-$\displaystyle \eva_{-i}$ & All elements of vector $\va$ except for element $i$ \\
-$\displaystyle \emA_{i,j}$ & Element $i, j$ of matrix $\mA$ \\
-$\displaystyle \mA_{i, :}$ & Row $i$ of matrix $\mA$ \\
-$\displaystyle \mA_{:, i}$ & Column $i$ of matrix $\mA$ \\
-$\displaystyle \etA_{i, j, k}$ & Element $(i, j, k)$ of a 3-D tensor $\tA$\\
-$\displaystyle \tA_{:, :, i}$ & 2-D slice of a 3-D tensor\\
-$\displaystyle \erva_i$ & Element $i$ of the random vector $\rva$ \\
-\end{tabular}
-\egroup
-\vspace{0.25cm}
+Likelihood: Low
+\subsubsection{Resolution}
+\begin{itemize}
+    \item Ensure multiple team members are training in important tasks, so that if in the case of a team member leaving, there will be a smooth transition of tasks
+    \item Maintain a comprehensive documentation of the project progress and process to help teammates who take on additional tasks
+\end{itemize}
 
+\section{Github Link}
+https://github.com/sysallykim/aps360\_fall2024\_group28
 
-\centerline{\bf Calculus}
-\bgroup
-\def\arraystretch{1.5}
-\begin{tabular}{p{1.25in}p{3.25in}}
-% NOTE: the [2ex] on the next line adds extra height to that row of the table.
-% Without that command, the fraction on the first line is too tall and collides
-% with the fraction on the second line.
-$\displaystyle\frac{d y} {d x}$ & Derivative of $y$ with respect to $x$\\ [2ex]
-$\displaystyle \frac{\partial y} {\partial x} $ & Partial derivative of $y$ with respect to $x$ \\
-$\displaystyle \nabla_\vx y $ & Gradient of $y$ with respect to $\vx$ \\
-$\displaystyle \nabla_\mX y $ & Matrix derivatives of $y$ with respect to $\mX$ \\
-$\displaystyle \nabla_\tX y $ & Tensor containing derivatives of $y$ with respect to $\tX$ \\
-$\displaystyle \frac{\partial f}{\partial \vx} $ & Jacobian matrix $\mJ \in \R^{m\times n}$ of $f: \R^n \rightarrow \R^m$\\
-$\displaystyle \nabla_\vx^2 f(\vx)\text{ or }\mH( f)(\vx)$ & The Hessian matrix of $f$ at input point $\vx$\\
-$\displaystyle \int f(\vx) d\vx $ & Definite integral over the entire domain of $\vx$ \\
-$\displaystyle \int_\sS f(\vx) d\vx$ & Definite integral with respect to $\vx$ over the set $\sS$ \\
-\end{tabular}
-\egroup
-\vspace{0.25cm}
-
-\centerline{\bf Probability and Information Theory}
-\bgroup
-\def\arraystretch{1.5}
-\begin{tabular}{p{1.25in}p{3.25in}}
-$\displaystyle P(\ra)$ & A probability distribution over a discrete variable\\
-$\displaystyle p(\ra)$ & A probability distribution over a continuous variable, or over
-a variable whose type has not been specified\\
-$\displaystyle \ra \sim P$ & Random variable $\ra$ has distribution $P$\\% so thing on left of \sim should always be a random variable, with name beginning with \r
-$\displaystyle  \E_{\rx\sim P} [ f(x) ]\text{ or } \E f(x)$ & Expectation of $f(x)$ with respect to $P(\rx)$ \\
-$\displaystyle \Var(f(x)) $ &  Variance of $f(x)$ under $P(\rx)$ \\
-$\displaystyle \Cov(f(x),g(x)) $ & Covariance of $f(x)$ and $g(x)$ under $P(\rx)$\\
-$\displaystyle H(\rx) $ & Shannon entropy of the random variable $\rx$\\
-$\displaystyle \KL ( P \Vert Q ) $ & Kullback-Leibler divergence of P and Q \\
-$\displaystyle \mathcal{N} ( \vx ; \vmu , \mSigma)$ & Gaussian distribution %
-over $\vx$ with mean $\vmu$ and covariance $\mSigma$ \\
-\end{tabular}
-\egroup
-\vspace{0.25cm}
-
-\centerline{\bf Functions}
-\bgroup
-\def\arraystretch{1.5}
-\begin{tabular}{p{1.25in}p{3.25in}}
-$\displaystyle f: \sA \rightarrow \sB$ & The function $f$ with domain $\sA$ and range $\sB$\\
-$\displaystyle f \circ g $ & Composition of the functions $f$ and $g$ \\
-  $\displaystyle f(\vx ; \vtheta) $ & A function of $\vx$ parametrized by $\vtheta$.
-  (Sometimes we write $f(\vx)$ and omit the argument $\vtheta$ to lighten notation) \\
-$\displaystyle \log x$ & Natural logarithm of $x$ \\
-$\displaystyle \sigma(x)$ & Logistic sigmoid, $\displaystyle \frac{1} {1 + \exp(-x)}$ \\
-$\displaystyle \zeta(x)$ & Softplus, $\log(1 + \exp(x))$ \\
-$\displaystyle || \vx ||_p $ & $\normlp$ norm of $\vx$ \\
-$\displaystyle || \vx || $ & $\normltwo$ norm of $\vx$ \\
-$\displaystyle x^+$ & Positive part of $x$, i.e., $\max(0,x)$\\
-$\displaystyle \1_\mathrm{condition}$ & is 1 if the condition is true, 0 otherwise\\
-\end{tabular}
-\egroup
-\vspace{0.25cm}
-
-
-
-\section{Final instructions}
+\section{References}
 Do not change any aspects of the formatting parameters in the style files.
 In particular, do not modify the width or length of the rectangle the text
 should fit into, and do not change font sizes (except perhaps in the
