@@ -15,9 +15,9 @@
 \usepackage{url}
 \usepackage{graphicx}
 
+
 %######## APS360: Put your project Title here
-\title{Formatting Instructions for APS360 Project  \\ 
-based on ICLR Conference Format}
+\title{Project Proposal: Traffic Sign Recognition Through Deep Learning}
 
 
 %######## APS360: Put your names, student IDs and Emails here
@@ -33,9 +33,9 @@ Maryah Noorani  \\
 Student\# 1008343188 \\
 \texttt{maryah.noorani@mail.utoronto.ca} \\
 \And
-Author Four \\
-Student\# 1005678901 \\
-\texttt{author4@mail.utoronto.ca} \\
+Seoyeon (Sally) Kim \\
+Student\# 1007713949 \\
+\texttt{sysally.kim@@mail.utoronto.ca} \\
 \AND
 }
 
@@ -58,7 +58,11 @@ Student\# 1005678901 \\
 \maketitle
 
 \begin{abstract}
-This template should be used for all your project related reports in APS360 course. -- Write an abstract for your project here. Please review the \textbf{ First Course Tutorial} for a quick start
+%This template should be used for all your project related reports in APS360 course. -- Write an abstract for your project here. Please review the \textbf{ First Course Tutorial} for a quick start
+
+This project proposes an advanced Traffic Sign Recognition (TSR) system which aims to increase road safety by accurately identifying traffic signs under various driving conditions. Utilizing Convolutional Neural Networks (CNN), this project aims to improve recognition accuracy. Using multiple datasets, including the German Traffic Sign Recognition Benchmark (GTSRD) and images collected from urban environments in Toronto, the project tackles challenges such as varying lighting, weather conditions, and potential biases. The network involves data preprocessing, augmentation, and a CNN architecture designed to maximize generalization across multiple scenarios. Additionally, ethical considerations surrounding bias and privacy have been addressed. This project aims to eventually contribute to the development of reliable driver-assistance systems, ultimately reducing human error and mitigating road accidents.
+
+
 %######## APS360: Do not change the next line. This shows your Main body page count.
 ----Total Pages: \pageref{last_page}
 \end{abstract}
@@ -71,28 +75,27 @@ Traffic Sign Recognition (TSR) is a crucial asset in driver-assistance systems. 
 
 This project intends to generalize TSR across complex driving conditions while retaining recognition accuracy and computational efficiency. To achieve this, TSR models utilize deep learning models and algorithms to enhance classification performance. Deep learning is leveraged in this study as it is highly adaptable feature learning and is incredibly adept at scaling to large datasets. Ultimately, this deep learning model can be trained to effectively and accurately identify traffic signs, thus creating a safer driving environment. 
 
-\section{Illustration}
-\label{gen_inst}
+
 
 \section{Background and Related Work}
 \label{headings}
-In a study conducted in 2018 by Madani and Yusof, a TSR model was created utilizing Support Vector Machines (SVM). This method highlights the colour, shape and pictogram on the traffic sign and ultimately efficiently identifies traffic signs with a recognition rate of 98.23\%. 
+In a study conducted in \citeyear{Madani} by \citeauthor{Madani}, a TSR model was created utilizing Support Vector Machines (SVM). This method highlights the colour, shape and pictogram on the traffic sign and ultimately efficiently identifies traffic signs with a recognition rate of 98.23\%. 
 
-Similarly, Soni et al. (2019) combined Histograms of Oriented Gradients (HOG), Local Binary Patterns (LBP), Principal Traffic Component Analysis (PCA) and SVM for traffic sign classification in their model. This model used PCA to reduce the dimensionality to overall improve the computational efficiency of the model, hence gaining an accuracy level of 84.44\%. 
+Similarly, \citet{soni2019improving} combined Histograms of Oriented Gradients (HOG), Local Binary Patterns (LBP), Principal Traffic Component Analysis (PCA) and SVM for traffic sign classification in their model. This model used PCA to reduce the dimensionality to overall improve the computational efficiency of the model, hence gaining an accuracy level of 84.44\%. 
 
-Namyang and Phimoltares (2020) applied a combination of HOG, SVM and Colour Layout Descriptors (CLD) to classify traffic signs. This method specifically resizes the images of traffic signs to 120x80 pixels then employs an SVM with a Radial Basis Function (RBF) kernel to improve classification accuracy, thus gaining an accuracy level of 93.98\%. 
+\citet{Namyang} applied a combination of HOG, SVM and Colour Layout Descriptors (CLD) to classify traffic signs. This method specifically resizes the images of traffic signs to 120x80 pixels then employs an SVM with a Radial Basis Function (RBF) kernel to improve classification accuracy, thus gaining an accuracy level of 93.98\%. 
 
-Kerim and Efe (2021) employed 9 different Artificial Neural Networks (ANNs) to analyze traffic signs using specific attributes of the image. HOG and LBP were applied to extract specific features to achieve an accuracy of 95\%. This model significantly outperforms models that rely exclusively on HOG. 
+\citet{kerim} employed 9 different Artificial Neural Networks (ANNs) to analyze traffic signs using specific attributes of the image. HOG and LBP were applied to extract specific features to achieve an accuracy of 95\%. This model significantly outperforms models that rely exclusively on HOG. 
 
-Lastly, Li et al. (2022) utilised the German Traffic Sign Recognition Benchmark (GTSRD) to exhibit the gravity of detail granularity and dimensionality reduction. This approach utilises an improved colour-histogram with HOG and reduced the dimensionality using PCA which yielded a near perfect score of 99.99\%. This model highlights the power of using colour information and dimensionality reduction to improve classification outcomes. 
+Lastly, \citet{li} utilised the German Traffic Sign Recognition Benchmark (GTSRD) to exhibit the gravity of detail granularity and dimensionality reduction. This approach utilises an improved colour-histogram with HOG and reduced the dimensionality using PCA which yielded a near perfect score of 99.99\%. This model highlights the power of using colour information and dimensionality reduction to improve classification outcomes. 
 
 \section{Data Processing}
 \subsection{Data Sources}
 \subsubsection*{GTSRD}
-As used in the study conducted by Li et al. (2022), this dataset is commonly utilized for traffic sign recognition tasks as it contains a variety of traffic sign images from different categories.
+As used in the study conducted by \citet{li}, this dataset is commonly utilized for traffic sign recognition tasks as it contains a variety of traffic sign images from different categories \citep{stallkamp2011gtsrb}.
 
-\subsection*{Data Collected from Toronto}
-To increase the diversity of data and sample size, we will be collecting various photographs of traffic signs in downtown Toronto.
+\subsubsection*{Data Collected from Toronto}
+According to a study conducted by \citeauthor{sug2018performance} in \citeyear{sug2018performance}, increasing the diversity of data and sample size yields more accurate results for machine learning algorithms. Therefore, we will be collecting various photographs of traffic signs in downtown Toronto.
 
 \subsubsection*{Data Collection Process}
 \begin{itemize}
@@ -100,20 +103,20 @@ To increase the diversity of data and sample size, we will be collecting various
     \item Collect at least 200 images of diverse traffic signs from various angles, distances, and under different lighting conditions to improve model generalization.
 \end{itemize}
 
-\section*{Data Cleaning and Standardization}
-To ensure good data quality, the dataset will be cleaned by removing duplicates and low-quality samples that could negatively affect the model’s performance. The images will then be standardized to a common dimension (e.g., 32x32 pixels) and a consistent image format (e.g., JPEG) for more efficient processing in the model’s architecture.
+\subsection{Data Cleaning and Standardization}
+To ensure good data quality, the dataset will be cleaned by removing duplicates and low-quality samples that could negatively affect the model’s performance. The images will then be standardized to a common dimension (e.g., 32x32 pixels) and a consistent image format (e.g., JPEG) for more efficient processing in the model’s architecture \citep{obviouslyai_datacleaning}.
 
-\section*{Data Augmentation}
-To enhance the model's ability to generalize, data augmentation techniques will be implemented. This will be done by applying various transformations, including:
+\subsection{Data Augmentation}
+To enhance the model's ability to generalize, data augmentation techniques will be implemented \citep{datacamp_dataaugmentation}. This will be done by applying various transformations, including:
 \begin{itemize}
     \item Rotations
     \item Changes in color and brightness
     \item Distance variation
 \end{itemize}
-Each image will be normalized by scaling the pixel values to a range of [0,1] to promote faster convergence during the training process.
+Each image will be normalized by scaling the pixel values to a range of [0,1] to promote faster convergence during the training process \citep{datacamp_normalization}.
 
-\section*{Data Splitting}
-After cleaning and augmenting the dataset, we will randomize it and split it into three distinct sets:
+\subsection{Data Splitting}
+After cleaning and augmenting the dataset, we will randomize it and split it into three distinct sets \citep{baheti2021_train_validation_test_split}:
 \begin{itemize}
     \item \textbf{Training set (70\%)}: Used to train the model.
     \item \textbf{Validation set (15\%)}: Used for tuning parameters and evaluating performance during training.
@@ -123,12 +126,7 @@ After cleaning and augmenting the dataset, we will randomize it and split it int
 This approach will ensure that our traffic sign recognition model is well-prepared for successful performance in real-world scenarios.
 
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{Figs/td-deep-learning.jpg}
-\end{center}
-\caption{Sample figure caption. Image: ZDNet}
-\end{figure}
+
 
 \section{Architecture}
 The core architecture for this project will be based on Convolutional Neural Networks (CNN) due to its superior ability to identify and classify images. 
@@ -139,9 +137,22 @@ In between these convolutional layers, our model will also utilize multiple max 
 
 The images are then sent to a fully connected layer that performs high-level reasoning and decision making. Finally, the data goes through an output layer where the softmax activation function is used and a separate set of weights and biases are applied to reach the final output data.
 
-
 \section{Baseline Model}
 The baseline model that will be employed for this is a machine learning algorithm specifically utilized for complex classifications called Support Vector Machines (SVM). SVM is applicable to both non-linear and linear datasets. This method identifies the optimal boundary called a hyperplane which separates datasets into various classes. The aim of this algorithm is to maximize the distance between two data points close to one another, referred to as support vectors, to define the optimal boundary. Furthermore, SVM can be combined with other enhancing techniques such as Histogram of Oriented Gradients (HOG) to achieve a higher accuracy. 
+\newpage
+
+\section{Illustration}
+The diagram below illustrates our proposed machine learning model.
+\label{gen_inst}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/aps350_proposal_figure.jpg}
+\end{center}
+\caption{Diagram of proposed model.}
+\end{figure}
+
+
+
 
 \section{Ethical Considerations}
 \subsection*{Bias}
@@ -158,34 +169,38 @@ The baseline model that will be employed for this is a machine learning algorith
 \begin{itemize}
     \item Testing in diverse environments: The testing data must include various different urban and rural environments to ensure that the model has seen and is able to classify signs with satisfactory accuracy regardless of the surrounding environments.
 \end{itemize}
+\newpage
+
 
 \section{Project Plan}
 
-\begin{table}
+\begin{table} [h]
     \centering
-    \begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1.5cm}|} \hline 
-         Task&  Mem 1&  Mem 2&  Mem 3&  Mem 4& Deadline\\ \hline 
+    \begin{tabular}{|p{2.1cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1.3cm}|} \hline 
+    
+         Task&  Maryah&  Sally&  Maya&  Member 4& Deadline\\ \hline 
          \multicolumn{6}{|c|}{Phase 1: Project Setup \& Data Collection}\\ \hline 
-         &  &  &  &  & Oct 13\\ \hline 
+         
+         Data collection \& preprocessing&  Download dataset, perform cleaning \& augmentation&  Review dataset, assist with data splitting (train/val/test)&  Compile list of universal traffic signs&  Help with augmentation strategies& Oct 13\\ \hline 
          Toronto Data Collection&  Collect 50 photos of various traffic signs&  Collect 50 photos of various traffic signs&  Collect 50 photos of various traffic signs&  Collect 50 photos of various traffic signs& Oct 13\\ \hline 
          \multicolumn{6}{|c|}{Phase 2: Baseline Model \& Initial Training}\\ \hline 
-         &  &  &  &  & Oct 20\\ \hline 
-         &  &  &  &  & Oct 25\\ \hline 
+         Build the baseline model&  Assist with model setup&  Implement baseline CNN&  Assist with training baseline model&  Help with baseline evaluation setup (metrics, confusion matrix)& Oct 20\\ \hline 
+         Evaluate the baseline model&  Help analyze dataset weaknesses (e.g. underfitting)&  Analyze model performance, document findings&  Help measure baseline performance (accuracy, confusion)&  Refine data (augmentation, cleaning)& Oct 25\\ \hline 
          \multicolumn{6}{|c|}{Phase 3: Model Optimization \& Hyperparameter Tuning}\\ \hline 
-         &  &  &  &  & Nov 10\\ \hline 
- & & & & &Nov 13\\ \hline 
- & & & & &Nov 15\\ \hline 
+         Hyperparameter tuning&  Assist with tuning (learning rate, batch size)&  Focus on tuning regularization \& dropout rate&  Focus on tuning model complexity (layer depth, optimizers)&  Assist with experimentation (e.g., batch size, tuning)& Nov 10\\ \hline 
+ Implement strategies to handle overfitting& Apply data augmentation (rotations, flips, zooms)& Add dropout layers to the architecture, tune dropout rate& Apply L2 regularization (weight decay) to control overfitting& Implement early stopping for the training process&Nov 13\\ \hline 
+ Improve model architecture& Support advanced model experimentation& Test different architectures (residuals, deeper CNNs)& Implement advanced architectures or transfer learning& Assist with architecture analysis&Nov 15\\ \hline 
  \multicolumn{6}{|c|}{Phase 4: Evaluation \& Testing}\\ \hline 
- & & & & &Nov 19\\ \hline 
+ Model evaluation on test set& Run final accuracy metric on test set, compute overall accuracy& Evaluate model performance, interpret results (precision/recall)& Generate final confusion matrix and accuracy report& Document final accuracy, assist with report&Nov 19\\ \hline 
  \multicolumn{6}{|c|}{Phase 5: Documentation \& Presentation}\\ \hline 
-         &  &  &  &  & Nov 23\\ \hline
+         Prepare final report and presentation&  Write report sections (intro, dataset)&  Write methodology and model architecture sections&  Write result analysis section&  Write challenges, conclusion, and compile report& Nov 23\\ \hline
     \end{tabular}
     
-    \caption{Caption}
+    \caption{Project Plan and Task Delegation}
     \label{tab:my_label}
 \end{table}
 
-Our team will collaborate by holding regular meetings every Thursday at 2PM, where we will review progress, discuss challenges, and plan upcoming tasks. To ensure consistent communication, we will utilize a dedicated group chat for daily updates, quick decisions, and clarifications. For seamless code collaboration, we will maintain a shared GitHub repository where all members can contribute. To avoid code overwriting, we will follow version control best practices, including using branches for individual tasks, submitting pull requests for review, and updating the team on active work to ensure synchronization.
+The tasks necessary to complete this project have been outlined and delegated, as shown in Table 1. We will collaborate by holding regular meetings every Thursday at 2PM, where we will review progress, discuss challenges, and plan upcoming tasks. To ensure consistent communication, we will utilize a dedicated group chat for daily updates, quick decisions, and clarifications. For seamless code collaboration, we will maintain a shared GitHub repository where all members can contribute. To avoid code overwriting, we will follow version control best practices, including using branches for individual tasks, submitting pull requests for review, and updating the team on active work to ensure synchronization.
 
 \section{Risk Register}
 \subsection{Data Overfitting}
@@ -193,14 +208,14 @@ Overfitting occurs in machine learning when a model accounts for the noise and o
 
 Likelihood: Medium
 
-\subsubsection{Resolution:}
+\subsubsection*{Resolution:}
 \begin{itemize}
     \item Utilize data augmentation in order to vary image color, rotation, or scale to artificially expand the data set 
     \item Track validation loss so we can catch overfitting early on in order to adjust the training accordingly 
 \end{itemize}
 \subsection{Limited Data Diversity}
 While the model will be tested with a selected dataset that is comprehensive, it is possible that it will not account for all possible variations of traffic signs encountered in real-world situations. This may result in the model failing to effectively generalize the data.  
-\subsubsection{Resolution:}
+\subsubsection*{Resolution:}
 \begin{itemize}
     \item Use multiple datasets from different regions or create our own dataset
     \item Evaluate the model on real-life traffic signs collected from personal photos
@@ -211,7 +226,7 @@ While the model will be tested with a selected dataset that is comprehensive, it
 The training for a model can be a time-consuming process when the architecture is complex or if the training data is large. This may result in project delays. 
 
 Likelihood: Medium
-\subsubsection{Resolution}
+\subsubsection*{Resolution}
 \begin{itemize}
     \item Attempt to optimize system by modifying hyperparameters, simplifying model complexity, or use more efficient algorithms in order to speed up the training process
     \item Set a time limit for training runs and monitor validation performance to stop training when performance plateaus to avoid unnecessary system cost
@@ -222,7 +237,7 @@ Likelihood: Medium
 The possibility of a team member dropping the course will result in disruptions in the project process and workload distribution.
 
 Likelihood: Low
-\subsubsection{Resolution}
+\subsubsection*{Resolution}
 \begin{itemize}
     \item Ensure multiple team members are training in important tasks, so that if in the case of a team member leaving, there will be a smooth transition of tasks
     \item Maintain a comprehensive documentation of the project progress and process to help teammates who take on additional tasks
@@ -232,20 +247,6 @@ Likelihood: Low
 https://github.com/sysallykim/aps360\_fall2024\_group28
 
 \section{References}
-Do not change any aspects of the formatting parameters in the style files.
-In particular, do not modify the width or length of the rectangle the text
-should fit into, and do not change font sizes (except perhaps in the
-\textsc{References} section; see below). Please note that pages should be
-numbered.
-
-
-\subsubsection*{Author Contributions}
-If you'd like to, you may include  a section for author contributions as is done
-in many journals. This is optional and at the discretion of the authors.
-
-\subsubsection*{Acknowledgments}
-Use unnumbered third level headings for the acknowledgments. All
-acknowledgments, including those to funding agencies, go at the end of the paper.
 
 \label{last_page}
 
