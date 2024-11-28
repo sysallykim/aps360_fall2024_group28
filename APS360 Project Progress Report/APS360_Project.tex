@@ -1,0 +1,261 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{iclr2022_conference,times}
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+%######## APS360: Uncomment your submission name
+\newcommand{\apsname}{Project Proposal}
+%\newcommand{\apsname}{Progress Report}
+%\newcommand{\apsname}{Final Report}
+
+%######## APS360: Put your Group Number here
+\newcommand{\gpnumber}{28}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+
+
+%######## APS360: Put your project Title here
+\title{Project Progress Report: Traffic Sign Recognition Through Deep Learning}
+
+
+%######## APS360: Put your names, student IDs and Emails here
+\author{Salwa Waseem  \\
+Student\# 10090214161\\
+\texttt{salwa.waseem@mail.utoronto.ca} \\
+\And
+Maya Ramaneetharan Ramanathan  \\
+Student\# 1008717596 \\
+\texttt{maya.ramanathan@mail.utoronto.ca} \\
+\AND
+Maryah Noorani  \\
+Student\# 1008343188 \\
+\texttt{maryah.noorani@mail.utoronto.ca} \\
+\And
+Seoyeon (Sally) Kim \\
+Student\# 1007713949 \\
+\texttt{sysally.kim@mail.utoronto.ca} \\
+\AND
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\iclrfinalcopy 
+%######## APS360: Document starts here
+\begin{document}
+
+
+\maketitle
+
+\begin{abstract}
+%This template should be used for all your project related reports in APS360 course. -- Write an abstract for your project here. Please review the \textbf{ First Course Tutorial} for a quick start
+
+The following document is a progress report outlining the developments made in the Traffic Sign Recognition (TSR) Project. A Convolutional Neural Network (CNN) has been employed along with a Support Vector Machines (SVM) to classify various traffic signs drivers may encounter on the road. Traffic Signs utilized to train the model are found in the German Traffic Sign Recognition Benchmark (GTSRD) and have been supplemented by various traffic signs found specifically in Toronto by the team. These photos have been passed into the baseline and primary model and received a high accuracy with the allocated training set. This document also outlines the contributions made by each member to the overall creation and testing of the model. 
+
+
+%######## APS360: Do not change the next line. This shows your Main body page count.
+----Total Pages: \pageref{last_page}
+\end{abstract}
+
+\section{Brief Project Description}
+Traffic Sign Recognition (TSR) is a crucial asset in driver-assistance systems. They are utilised to improve road safety by automating detection of traffic signs. This is essential to ensure vehicles are responsive to speed warnings, road conditions and are ultimately adaptable to dynamic driving environments. This technology aims to improve safety in vehicles to reduce human error and eventually mitigate road accidents. However, there are several challenges due to assorted lighting conditions, weather, and overall accuracy of interpretation. 
+
+This project intends to generalize TSR across complex driving conditions while retaining recognition accuracy and computational efficiency. To achieve this, TSR models utilize deep learning models and algorithms to enhance classification performance. Deep learning is leveraged in this study as it is highly adaptable feature learning and is incredibly adept at scaling to large datasets. Ultimately, this deep learning model can be trained to effectively and accurately identify traffic signs, thus creating a safer driving environment. 
+
+\newpage
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/project_desc.png}
+\end{center}
+\caption{Schematic of Deep Learning Model }
+\end{figure} 
+
+
+\section{Individual Contributions and Responsibilities}
+Through our weekly meetings, held weekly on Thursdays at 2pm, there has been effective collaboration amongst the team to create models and test the model through training sets. Each member is expected to contribute to brainstorming sessions, code development and most importantly, update with any completed tasks or reporting any uncertainties that may have hindered completion of a task or absence to a meeting. Meetings have been held in person to mitigate code overwriting. 
+
+The team also has a group chat via Instagram DMs to communicate any update or issues. Links to meetings, references and any other resources to supplement the project are also shared in this group chat. The baseline model and primary model have been developed on Google Colab, where each team member has access to it and stored among a shared Google Drive. Github has also been employed to store notebooks and any vital documents for reference. 
+There is an emphasis on equality of work distribution in this team. While all tasks have been fleshed out in Table 1, emergencies can occur and therefore contingencies have been put into place to ensure tasks get completed. For example, if any task is incomplete, a meeting will be held to discuss the situation and work will be reallocated accordingly. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+         Assignment &  Task &  Assigned To & Deadline \\
+         Progress Report&&&\\
+         Written Document &  Project Description&  Salwa & 03/11/2024\\
+         &  Individual Contributions &  Salwa & 03/11/2024\\
+         &  Data Processing &  Maya & 03/11/2024\\
+         &  Baseline Model &  Sally & 03/11/2024\\
+         &  Primary Model &  Maryah & 03/11/2024\\
+         Data Processing &  Data Search &  Salwa & 03/11/2024\\
+ & Data Loading & Sally&03/11/2024\\
+         &  Data Cleaning &  Maryah& 03/11/2024\\
+         &  Data Mounting &  Maya & 03/11/2024\\
+ Baseline Model & Support Vector Machines (SVM) & Sally&03/11/2024\\
+ Primary Model & Architecture & Maryah&03/11/2024\\
+ & Training & Salwa &03/11/2024\\
+ Final Project&&&\\
+ Project Final Report & Revising Proposal & All Members &26/11/2024\\
+ & Quantitative Results & Maryah &26/11/2024\\
+ & Qualitative Results & Sally &26/11/2024\\
+ & Validation Set (new data) & Maya &26/11/2024\\
+ & Discussion & Salwa&26/11/2024\\
+ Project Presentation & Problem and Data & Salwa&28/11/2024\\
+ & Data Processing and Model & Maryah&28/11/2024\\
+ & Demonstration and Editing & Sally&28/11/2024\\
+ & Overall Results and Key Takeaways & Maya &28/11/2024\\
+    \end{tabular}
+    \caption{Task Breakdown and Timeline}
+    \label{tab:my_label}
+\end{table}
+
+\section{Notable Contributions}
+\subsection{Data Processing}
+\subsubsection{Data Collection and Sources:}
+The dataset to be used for this model is taken from the German Traffic Sign Recognition Benchmark (GTSRB) which contains pictures captured from the real-world. This diverse dataset includes images of different lighting conditions, angles and backgrounds and each image is labeled according to its corresponding class. This dataset consists of 43 classes and 51,839 images.
+\subsubsection{Data Cleaning and Preprocessing:}
+A series of preprocessing steps are applied to the dataset to clean and standardize the data going into the model. This includes:
+Resizing: All images are resized to 128x128 pixels to standardize the input size across the dataset. 
+\begin{itemize}
+    \item Normalization: Each image’s pixel value is normalized to fall within the range of [0,1] to ensure the model focuses on all areas of the image equally and to help the model learn properly.
+    \item Augmentation: Data augmentation techniques such as rotations, flips, brightness adjustments and zooms have been utilized to increase training data while simultaneously changing the data enough to prevent overfitting. These transformations also simulate the varying conditions of traffic signals in real-world scenarios, better equipping the model for the outside world.
+\end{itemize}
+\subsubsection{Data Splitting:}
+The dataset was split into training, validation, and testing sets with a 70-15-15 split ratio. This means that the 51,839 images were split into 36,287 training images and 2,332 validation images and 2,332 testing images.
+\subsubsection{Example Data Samples:}
+One example from our cleaned dataset includes the following:
+Speed Limit Sign: Here the speed limit sign is in the center of the 128x128 pixel image. There are multiple variations of this same image (data augmentations) to help the model learn without overfitting.
+
+
+\label{gen_inst}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.15\textwidth]{Figs/Traffic signal (original img).png}
+\end{center}
+\caption{Original Image size (59x59 pixels)}
+\end{figure}
+
+\label{gen_inst}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.25\textwidth]{Figs/Traffic signal (resized img).png}
+\end{center}
+\caption{Image after resizing (128x128 pixels)}
+\end{figure}
+
+\label{gen_inst}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.35\textwidth]{Figs/rotated 30.png}
+\end{center}
+\caption{Image after a Data Augmentation (Rotation by 45°)}
+\end{figure}
+
+
+
+\subsubsection{Plan for New Data Testing:}
+To assess the model, we plan to gather new images from an alternate traffic dataset which is not included in our initial training set. This will allow us to evaluate the model’s performance on completely unseen data which will simulate its behavior in the real-world more closely.
+\subsubsection{Challenges:}
+One challenge faced was the handling of images where the signs were partially covered or inaccessible due to some obstruction. These images required careful cropping and augmentation techniques to successfully detect the label. Additionally, variations in lighting led to inconsistencies in the result. This was handled through normalization and data augmentation. 
+
+\subsection{Baseline Model}
+For the baseline model, we implemented a Support Vector Machine (SVM) classifier trained on the processed complete dataset.
+An SVM is a supervised machine learning algorithm that classifies data by finding an optimal hyperplane that best separates data points into different classes in a high-dimensional space. For binary classification, this hyperplane is a line that divides data into two groups, maximizing the margin between them. In multiclass classification, an SVM handles multiple classes by creating multiple hyperplanes to separate each class pairwise. Data points closest to the hyperplane, known as support vectors, are particularly important as they define the boundary position and orientation, helping to generalize the model’s predictions\citep{yue2003svm}. Figure 5 models how a SVM would classify the classes.
+
+\newpage
+\label{gen_inst}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/Figure_1_for_baseline.jpg}
+\end{center}
+\caption{How a SVM model separates classes}
+\end{figure}
+
+When data isn’t linearly separable, SVM uses a technique called the "kernel trick" to transform the data into a higher-dimensional space, where a linear separation becomes possible. For this baseline model, we used a linear kernel, which balances simplicity with efficiency, and serves as a foundation for understanding initial performance.
+
+The current dataset required some additional preprocessing to make it suitable for the SVM. We resized each image to 32x32 pixels and converted them to grayscale, reducing complexity while preserving the core visual features. The grayscale images were flattened into one-dimensional vectors, allowing the SVM to handle images as structured feature sets. To further optimize model convergence, these vectors were standardized, ensuring uniformity in pixel intensity ranges.
+
+Model evaluation was performed using accuracy, a straightforward metric aligned with the task's objective to classify traffic signs accurately. Our baseline SVM achieved a solid initial accuracy of 84.56\%, showing that even a straightforward linear model can identify important patterns within the traffic sign data. This outcome suggests that SVM provides a reliable baseline, though additional accuracy improvements may be possible by experimenting with non-linear kernels or more complex model structures. A detailed schematic of the SVM model, including the preprocessing steps, classification process, and evaluation metrics, is shown in Figure 6, outlining each stage from data preparation to performance evaluation.
+
+\newpage
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/Figure_2_for_baseline.jpg}
+\end{center}
+\caption{Diagram of SVM model}
+\end{figure} 
+
+
+\subsection{Primary Model}
+Our Traffic Sign Recognition model is based on a Convolutional Neural Network (CNN) architecture. We chose CNN for its capability in image recognition tasks. CNNs can identify complex visual patterns by automatically learning relevant features, making them highly effective for traffic sign distinctions, where accurate and quick identification of traffic signs is essential. Below, is a diagram and description of each component of our model architecture in detail.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/DiagramCNN.png}
+\end{center}
+\caption{Diagram of current CNN model}
+\end{figure}
+
+\subsubsection{Convolutional Layers}
+The core of our architecture is a series of convolutional layers, each followed by ReLU (Rectified Linear Unit) activations. These layers are designed to capture various visual features, such as edges, colors, and shapes. Each convolutional layer has multiple filters that apply convolution operations on the image, progressively learning more abstract features. For instance, early layers capture low-level details like edges and textures, while deeper layers focus on high-level structures such as traffic sign shapes. We use the ReLU activation function, which introduces non-linearity and helps the network learn complex patterns without the risk of gradient vanishing.
+
+\subsubsection{Layer Configuration:}
+\begin{itemize}
+    \item First Block: 32 filters, 3x3 kernel
+    \item Second Block: 64 filters, 3x3 kernel
+    \item Third Block: 128 filters, 3x3 kernel
+\end{itemize}
+
+\subsubsection{Pooling Layers}
+Between each convolutional layer, we added a 2x2 max-pooling layer to downsample the feature maps and reduce the spatial dimensions, while retaining the most significant feature within that region. Pooling helps in reducing computation and minimizing the risk of overfitting by focusing on the most crucial features while discarding less important details.
+
+\subsubsection{Dropout Layers}
+To address potential overfitting, particularly when working with a limited dataset, dropout layers are introduced after each pooling layer. These layers randomly deactivate a proportion of neurons during training, forcing the network to reduce dependency on specific neurons. We applied a dropout rate of 25%. 
+
+\subsubsection{Fully Connected Layers and Output Layers}
+After flattening the final pooled feature map, the data is fed into fully connected (dense) layers, where high-level reasoning occurs. These layers serve to interpret the abstracted features from convolutional layers and perform classification. The model includes a dense layer with 128 units and ReLU activation, followed by a dropout of 50\% to prevent overfitting.
+
+The output layer is a dense layer with a number of neurons equal to the number of traffic sign classes in the dataset, using a softmax activation function. Softmax provides a probability distribution across the classes, meaning the model assigns a score to each class prediction.
+
+\subsubsection{Training Analysis}
+For the training loop, we used an Adam optimizer and a Cross Entropy loss function. We chose the Adam optimizer as it has low memory usage and the cross entropy function as its ideal for multi-class classification. We trained using a batch size of 64, learning rate of 0.01, and 20 epochs. The training and validation accuracy curves (see Figure 8) indicate steady learning with no major signs of overfitting or underfitting, demonstrating that the architecture is well-suited to the problem. The current model was able to reach a training accuracy of 95.45\% and a validation accuracy of 92.35\%. The loss curves (Figure 9) show a similar trend, with validation loss converging closely with training loss over epochs.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/Accuracy Graph.png}
+\end{center}
+\caption{Training and Validation Accuracy over Epochs.}
+\end{figure} 
+\newpage
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Figs/Loss Graph.png}
+\end{center}
+\caption{Training and Validation Loss over Epochs.}
+\end{figure} 
+
+When evaluated on specific sample classes, the model was particularly effective at recognizing common signs (ex. speed limits), which are crucial for driving safety. However, it struggled more with less common signs that have lower representation in the dataset. This means that we have a class imbalance that might lead to biased predictions toward more frequent traffic signs. This suggests the system would benefit from more data or data augmentations specifically focused on those rare classes.
+
+
+\section{References}
+
+\label{last_page}
+
+\bibliography{APS360_ref}
+\bibliographystyle{iclr2022_conference}
+
+\end{document}
